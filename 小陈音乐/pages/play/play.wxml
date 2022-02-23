@@ -1,0 +1,54 @@
+<view class="container flex-align">
+	<view style="text-align:center;position:relative;" class="box">
+		<view style="color:white; padding:10rpx">{{songs.name}}</view>
+		<view style="color:#ddd;" class="f12">{{songs.ar[0].name}}</view>
+	</view>
+	<view class="flex-1 flex-center discAnimation{{isPlay&&'.discAnimation'}}" wx:if="{{isLrc==false}}" bindtap="isLrc">
+		<image src="{{songs.al.picUrl}}" class="img {{isPlay===false?'pause':''}}" />
+	</view>
+	<!--歌词-->
+	<view wx:else class="flex-1 flex-center z" bindtap="isLrc" style="position:relative;">
+		<view wx:if='{{isScroll}}' class="line flex-box"
+			style="width:100%;color:white;border:1px solid rgba(244,244,244,0.2);">
+			<view style="margin:0rpx 20rpx;" class="f12 flex-center">{{locationShowTime}}</view>
+			<view class="flex-1" style="color:red;height:2rpx;width:100%;background:green;"></view>
+			<view style="margin:0rpx 20rpx;" class="flex-center">
+				<image class=" iconfont icon-bofang" style="height:40rpx;width:40rpx;z-index:999;" catchtap="playScroll" />
+			</view>
+		</view>
+		<scroll-view scroll-y style="height:600rpx;" scroll-with-animation scroll-top="{{locationIndex*27}}"
+			bindscroll="scroll" bindtouchstart="touchstart" bindtouchend="touchend">
+			<view style="height:284rpx;"></view>
+			<view wx:for="{{lrc}}" wx:key="index" class="f16" style="text-align:center;margin:20rpx 0rpx;color:#ccc;"><text
+					style="position: relative;">{{item}}<text wx:if="{{location===index}}" class="hover"
+						style="animation: test {{timeLen}}s;">{{item}}</text></text></view>
+			<view style="height:300rpx;"></view>
+		</scroll-view>
+	</view>
+	<!--进度条-->
+	<view class="flex-box box" style="color:white;">
+		<view class="time flex-center">{{nowTime}}</view>
+		<view class="flex-1">
+			<slider min="{{min}}" max="{{max}}" block-size="12" value="{{value}}" bindchange="slider"
+				bindchanging="sliderNow"></slider>
+		</view>
+		<view class="time1 flex-center">{{totalTime}}</view>
+	</view>
+	<!--播放控件-->
+	<view class="flex-box menu">
+		<view class="left">
+			<text wx:if="{{categoryActive===0}}" bindtap="toggleCategory" class="iconfont icon-biao- "></text>
+			<text wx:if="{{categoryActive===1}}" bindtap="toggleCategory" class="iconfont icon-suijibofang"></text>
+			<text wx:if="{{categoryActive===2}}" bindtap="toggleCategory" class="iconfont icon-danqubofang"></text>
+		</view>
+		<view class="cetern">
+			<text class=" iconfont icon-shangyishoushangyige" style="height:80rpx;width:80rpx;" bindtap="back"></text>
+			<text wx:if="{{isPlay===false}}" bindtap="togglePlay" class="iconfont icon-24gl-playCircle"></text>
+			<text wx:else bindtap="togglePlay" class=" iconfont icon-24gl-pauseCircle"></text>
+			<text class="iconfont icon-xiayigexiayishou" style="height:80rpx;width:80rpx;" bindtap="next"></text>	
+			<text class="iconfont icon-xihuan1 {{isLike?'like':''}}" bindtap="like"></text>
+
+		</view>
+	
+	</view>
+</view>

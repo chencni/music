@@ -1,0 +1,109 @@
+.container{
+  position: absolute;
+  width: 100%;
+  height:100%;
+  background:rgba(78, 75, 75, 0.658);
+  /* border: 1px solid red; */
+}
+
+.img{
+  width:500rpx;
+  height:500rpx;
+  border-radius: 50%;
+  border: 20rpx solid rgba(204, 203, 203, 0.541);
+  /* -webkit-animation: rotate 10s linear infinite; */
+}
+.discAnimation{
+  animation: rotate 30s linear infinite ;
+  animation-fill-mode: forwards;
+}
+.pause{
+  animation-play-state:paused;
+-webkit-animation-play-state:paused; /* Safari 和 Chrome */
+}
+
+.menu{
+  padding: 60rpx 10rpx  60rpx 10rpx;
+}
+.left text{
+  font-size: 78rpx;
+  color: white;
+  position: relative;
+  top: 8rpx;
+  left: 5rpx;
+  padding-right: 20rpx;
+}
+
+.cetern text{
+  font-size: 100rpx;
+  color: white;
+  padding: 10rpx 35rpx;
+}
+.picker{
+  font-size: 75rpx;
+  color: white;
+  padding: 10rpx 10rpx  20rpx 30rpx;
+}
+.move:active {
+  animation-delay: -6s;
+  animation: heartBeat 2s;
+}
+.line{
+  position: absolute;
+  top:50%;
+}
+
+@keyframes rotate {
+  0%{
+      transform:rotate(0deg);
+      -ms-transform:rotate(0deg);     /* IE 9 */
+      -moz-transform:rotate(0deg);    /* Firefox */
+      -o-transform:rotate(0deg);
+  }
+  100% {
+      transform:rotate(360deg);
+      -ms-transform:rotate(360deg);   /* IE 9 */
+      -moz-transform:rotate(360deg);  /* Firefox */
+      -o-transform:rotate(360deg);
+  }
+}
+@-webkit-keyframes rotate {
+  0%{
+      -moz-transform:rotate(0deg);
+  }
+  100%{
+      -moz-transform:rotate(360deg);
+  }
+}
+
+/*文字过渡*/
+.hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: rgb(21, 255, 0);
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+}
+
+@keyframes test {
+  from {
+      width: 0%;
+  }
+  to {
+      width: 100%;
+  }
+}
+.time{
+  position: relative;
+  left: 2%;
+  bottom: 2%;
+}
+.time1{
+  position: relative;
+  right: 2%;
+}
+.like {
+  color:#fd5341;
+}

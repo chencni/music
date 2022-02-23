@@ -1,0 +1,14 @@
+<!--pages/list/list.wxml-->
+ <view class="recommendContainer">
+    <!-- 头部区域 -->
+    <view class="head">
+    <text>推  荐  歌  单</text>
+    </view>
+    <!-- 内容区 -->
+    <scroll-view class="recommendScroll" enable-flex scroll-x>
+      <view class="scrollItem" wx:for="{{recommendList}}" wx:key="id" wx:for-item="recommendItem">
+        <image src="{{recommendItem.picUrl}}" id="{{recommendItem.id}}" bindtap="toPlayList"></image>
+        <text bindtap="toPlayList" id="{{recommendItem.id}}">{{recommendItem.name}}</text>
+      </view>
+    </scroll-view>
+  </view>

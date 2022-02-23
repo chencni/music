@@ -1,0 +1,38 @@
+/* pages/list/list.wxss */
+.head{
+position: relative;
+left: 35%;
+padding: 10rpx;
+}
+.head text{
+font-size: 45rpx;
+color: #666;
+}
+/* 推荐内容区 */
+.recommendScroll{
+  display: flex;
+  flex-wrap: wrap;
+}
+.scrollItem{
+  width:220rpx;
+  margin: 15rpx; 
+}
+.scrollItem image{
+  width: 210rpx;
+  height: 210rpx;
+  border-radius: 10rpx;
+}
+.scrollItem text{
+  font-size: 27rpx;
+  /* 单行文本溢出隐藏 省略号代替 */
+  /* display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+  /* 多行文本溢出隐藏 省略号代替 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical; /*设置对齐 */
+   -webkit-line-clamp: 2; /*设置多行行数 */ 
+}

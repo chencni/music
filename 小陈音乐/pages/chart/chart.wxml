@@ -1,0 +1,25 @@
+<!--pages/chart/chart.wxml-->
+<!-- 排行榜区域 -->
+<view class="topList">
+  <!-- 头部区域 -->
+  <view class="head">
+    <text class="title">排行榜</text>
+  </view>
+  <!-- 内容区域 -->
+    <swiper class="topListhead" circular next-margin="300px"  current="{{currentIndex}}" bindchange="changeSwiper">
+    <swiper-item wx:for="{{topList}}" wx:key="name" data-index="{{index}}"  data-song='{{item}}'>
+      <view class="title {{index == currentIndex ?'active':''}}">{{item.name}}</view>
+    </swiper-item>
+  </swiper>
+    <swiper class="topListSwiper" bindchange="changeSwiper" current="{{currentIndex}}" >
+      <swiper-item wx:for="{{topList}}" wx:key="name">
+        <view class="swiperItem">
+          <view class="musicItem" wx:for="{{item.tracks}}" wx:key="id" bindtap="toSongDetail" data-index="{{index}}" data-song='{{item}}' wx:for-item="musicItem" id="{{musicItem.id}}" >
+            <image  src="{{musicItem.al.picUrl}}"></image>
+            <text  class="count">{{index+1}}</text>
+            <text  class="musicName">{{musicItem.name}}</text>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+</view>

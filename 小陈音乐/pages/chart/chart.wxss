@@ -1,0 +1,49 @@
+/* pages/chart/chart.wxss */
+ .head .title{
+   font-size: 26px;
+   margin: auto;
+   padding: 20rpx;
+ }
+ .topListhead{
+  padding-left: 10rpx;
+   height: 80rpx;
+
+ }
+ .topListhead .title{
+  line-height: 80rpx;
+
+}
+.topListhead .active{
+  /* border-bottom: 1rpx solid #ff0d00; */
+  color: #ff0d00;
+}
+ .topListSwiper{
+   height: 2380rpx;
+   padding: 20rpx;
+ }
+ .swiperItem{
+   width:100%;
+   background: #fbfbfb;
+ }
+ .musicItem{
+   display: flex;
+   margin-bottom: 20rpx;
+ }
+ .musicItem image{
+   width: 100rpx;
+   height: 100rpx;
+   border-radius:6rpx;
+ }
+ .musicItem .count{
+ width: 100rpx;
+ height: 100rpx;
+ text-align: center;
+ line-height: 100rpx;
+ }
+ .musicItem .musicName{
+   height: 100rpx;
+   line-height: 100rpx;
+   max-width: 400rpx;
+   overflow: hidden;
+   text-overflow: ellipsis;
+ }
